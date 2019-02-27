@@ -1,0 +1,14 @@
+{
+  "extends": "rallycoding",
+  "rules": {
+    "eol-last": "off",
+    "no-unused-vars": "warn",
+    "no-underscore-dangle": "off",
+    "object-shorthand": "warn",
+    "no-throw-literal": "off",
+    "global-require": "off",
+    "no-else-return": "warn",
+    "jsx-quotes": "off",
+    "quotes": "off"
+  }
+}
