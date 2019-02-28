@@ -3,9 +3,9 @@ import { bindActionCreators, Dispatch } from "redux"
 
 import { setName } from "@redux/actions/user"
 
-import Login, { Actions } from "./Login"
+import Login, { ReduxActions } from "./Login"
 
-function mapDispatchToProps(dispatch: Dispatch): Actions {
+function mapDispatchToProps(dispatch: Dispatch): ReduxActions {
   return {
     userActions: bindActionCreators({ setName }, dispatch)
   }

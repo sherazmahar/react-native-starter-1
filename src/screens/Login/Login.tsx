@@ -42,13 +42,13 @@ export default class Login extends React.Component<Props, State> {
   }
 }
 
-export interface Actions {
+export interface ReduxActions {
   userActions: {
     setName: typeof setName
   }
 }
 
-export interface Props extends Actions {
+export interface Props extends ReduxActions {
   navigation: NavigationScreenProp<any, any>
 }
 

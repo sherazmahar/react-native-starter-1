@@ -2,11 +2,13 @@ import { connect } from "react-redux"
 
 import { nameSelector } from "@src/redux/selectors/userSelector"
 
-import Main from "./Main"
+import Main, { ReduxProps } from "./Main"
 
-const mapStateToProps = (state: any) => ({
-  name: nameSelector(state)
-})
+function mapStateToProps(state: any): ReduxProps {
+  return {
+    name: nameSelector(state)
+  }
+}
 
 export default connect(
   mapStateToProps,

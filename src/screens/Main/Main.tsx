@@ -7,13 +7,6 @@ import { Routes } from "@src/navigators/Main"
 
 import styles from "./styles"
 
-export interface Props {
-  navigation: NavigationScreenProp<any, any>
-  name: string
-}
-
-export interface State {}
-
 export default class Main extends React.Component<Props, State> {
   render() {
     return (
@@ -25,3 +18,13 @@ export default class Main extends React.Component<Props, State> {
     )
   }
 }
+
+export interface ReduxProps {
+  name: string
+}
+
+export interface Props extends ReduxProps {
+  navigation: NavigationScreenProp<any, any>
+}
+
+export interface State {}
