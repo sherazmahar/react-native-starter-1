@@ -1,4 +1,4 @@
-package com.workevo;
+package com.starter;
 
 import android.app.Application;
 
