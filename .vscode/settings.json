@@ -5,6 +5,7 @@
     "@assets": "${workspaceRoot}/src/assets",
     "@components": "${workspaceRoot}/src/components",
     "@configs": "${workspaceRoot}/src/configs",
+    "@models": "${workspaceRoot}/src/models",
     "@navigators": "${workspaceRoot}/src/navigators",
     "@redux": "${workspaceRoot}/src/redux",
     "@screens": "${workspaceRoot}/src/screens",

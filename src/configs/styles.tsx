@@ -6,5 +6,6 @@ export const Colors = {
 
 export const Spaces = {
   PADDING: 16,
+  MARGIN: 24,
   RADIUS: 10
 }

@@ -1,6 +1,6 @@
 import { StyleSheet } from "react-native"
 
-import { Colors } from "@configs/styles"
+import { Colors, Spaces } from "@configs/styles"
 
 export default StyleSheet.create({
   container: {
@@ -8,5 +8,12 @@ export default StyleSheet.create({
     backgroundColor: Colors.BACKGROUND,
     justifyContent: "center",
     alignItems: "center"
+  },
+  nameTextInput: {
+    alignSelf: "stretch",
+    padding: Spaces.PADDING,
+    margin: Spaces.MARGIN,
+    borderRadius: 10,
+    borderWidth: 1
   }
 })
