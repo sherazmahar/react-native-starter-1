@@ -9,5 +9,24 @@
     "@redux": "${workspaceRoot}/src/redux",
     "@screens": "${workspaceRoot}/src/screens",
     "@utils": "${workspaceRoot}/src/utils"
-  }
+  },
+  "importSorter.generalConfiguration.sortOnBeforeSave": true,
+  "importSorter.importStringConfiguration.hasSemicolon": false,
+  "importSorter.importStringConfiguration.quoteMark": "double",
+  "importSorter.sortConfiguration.customOrderingRules.rules": [
+    {
+      "type": "importMember",
+      "regex": "^$",
+      "orderLevel": 10,
+      "disableSort": true
+    },
+    {
+      "regex": "^[@]",
+      "orderLevel": 30
+    },
+    {
+      "regex": "^[.]",
+      "orderLevel": 40
+    }
+  ]
 }

@@ -5,11 +5,13 @@
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "test": "jest",
-    "reset-cache": "yarn start -- --reset-cache"
+    "reset-cache": "yarn start -- --reset-cache",
+    "lint": "tslint -p \".\" -t stylish"
   },
   "dependencies": {
     "react": "16.6.3",
     "react-native": "0.58.5",
+    "react-native-gesture-handler": "^1.0.16",
     "react-native-vector-icons": "^6.3.0",
     "react-navigation": "^3.3.2",
     "react-redux": "^6.0.1",
@@ -19,6 +21,7 @@
   "devDependencies": {
     "@types/react": "^16.8.5",
     "@types/react-native": "^0.57.38",
+    "@types/react-navigation": "^3.0.4",
     "babel-core": "^7.0.0-bridge.0",
     "babel-eslint": "^10.0.1",
     "babel-jest": "24.1.0",
@@ -29,6 +32,10 @@
     "react-native-typescript-transformer": "^1.2.11",
     "react-test-renderer": "16.6.3",
     "redux-logger": "^3.0.6",
+    "tslint": "^5.13.0",
+    "tslint-eslint-rules": "^5.4.0",
+    "tslint-react": "^3.6.0",
+    "tslint-react-recommended": "^1.0.15",
     "typescript": "^3.3.3333"
   },
   "jest": {

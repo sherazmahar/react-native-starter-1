@@ -9,7 +9,9 @@
     "wayou.vscode-todo-highlight",
     "aaron-bond.better-comments",
     "esbenp.prettier-vscode",
-    "vsmobile.vscode-react-native"
+    "vsmobile.vscode-react-native",
+    "ms-vscode.vscode-typescript-tslint-plugin",
+    "mike-co.import-sorter"
   ],
   // List of extensions recommended by VS Code that should not be recommended for users of this workspace.
   "unwantedRecommendations": []

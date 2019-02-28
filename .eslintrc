@@ -9,6 +9,7 @@
     "global-require": "off",
     "no-else-return": "warn",
     "jsx-quotes": "off",
-    "quotes": "off"
+    "quotes": "off",
+    "sort-imports": "warn"
   }
 }
