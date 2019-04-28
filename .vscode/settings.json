@@ -9,7 +9,7 @@
     "@modules": "${workspaceRoot}/src/modules",
     "@navigators": "${workspaceRoot}/src/navigators",
     "@redux": "${workspaceRoot}/src/redux",
-    "@pages": "${workspaceRoot}/src/pages",
+    "@screens": "${workspaceRoot}/src/screens",
     "@utils": "${workspaceRoot}/src/utils"
   },
   "importSorter.generalConfiguration.sortOnBeforeSave": true,

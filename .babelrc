@@ -15,7 +15,7 @@
           "@modules": "./src/modules",
           "@navigators": "./src/navigators",
           "@redux": "./src/redux",
-          "@pages": "./src/pages",
+          "@screens": "./src/screens",
           "@utils": "./src/utils"
         }
       }

@@ -1,5 +1,5 @@
 import React from "react"
-import { ActivityIndicator, View } from "react-native"
+import { ActivityIndicator } from "react-native"
 
 import { Card, Text } from "@components"
 import { lang } from "@languages"

@@ -1,9 +1,8 @@
 import i18n from "i18n-js"
 import * as RNLocalize from "react-native-localize"
 
-import AppLanguage from "@languages/translations/type"
-
 import * as languages from "./translations"
+import AppLanguage from "./translations/type"
 
 i18n.fallbacks = true
 i18n.translations = languages
