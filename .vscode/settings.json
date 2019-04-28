@@ -1,11 +1,12 @@
 {
   "path-intellisense.mappings": {
-    "@src": "${workspaceRoot}/src",
     "@apis": "${workspaceRoot}/src/apis",
     "@assets": "${workspaceRoot}/src/assets",
     "@components": "${workspaceRoot}/src/components",
     "@configs": "${workspaceRoot}/src/configs",
+    "@languages": "${workspaceRoot}/src/languages",
     "@models": "${workspaceRoot}/src/models",
+    "@modules": "${workspaceRoot}/src/modules",
     "@navigators": "${workspaceRoot}/src/navigators",
     "@redux": "${workspaceRoot}/src/redux",
     "@pages": "${workspaceRoot}/src/pages",

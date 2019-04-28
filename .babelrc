@@ -6,15 +6,16 @@
       {
         "root": ["./src"],
         "alias": {
-          "@src": "./src",
           "@apis": "./src/apis",
           "@assets": "./src/assets",
           "@components": "./src/components",
           "@configs": "./src/configs",
+          "@languages": "./src/languages",
           "@models": "./src/models",
+          "@modules": "./src/modules",
           "@navigators": "./src/navigators",
           "@redux": "./src/redux",
-          "@screens": "./src/screens",
+          "@pages": "./src/pages",
           "@utils": "./src/utils"
         }
       }

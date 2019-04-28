@@ -3,6 +3,7 @@ import { User } from "@models"
 import { UserAction, UserActionTypes } from "./types"
 
 const INITIAL_STATE: User = {
+  id: "",
   name: ""
 }
 

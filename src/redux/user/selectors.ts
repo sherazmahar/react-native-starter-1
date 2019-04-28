@@ -1,8 +1,7 @@
 import { AppState } from "@redux/reducers"
+import { AppReducerType } from "@redux/types"
 
-export const USER = "user"
-
-export const userSelector = (state: AppState) => state[USER]
+export const userSelector = (state: AppState) => state[AppReducerType.USER]
 
 export const nameSelector = (state: AppState) => userSelector(state).name
 

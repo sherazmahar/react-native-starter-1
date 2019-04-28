@@ -1,11 +1,12 @@
 import { combineReducers } from "redux"
 
-import { USER } from "@redux/user/selectors"
-
-import userReducer from "./user/reducers"
+import loadStateReducer from "./LoadState/reducers"
+import { AppReducerType } from "./types"
+import userReducer from "./User/reducers"
 
 const reducers = combineReducers({
-  [USER]: userReducer
+  [AppReducerType.USER]: userReducer,
+  [AppReducerType.LOAD_STATE]: loadStateReducer
 })
 
 export default reducers

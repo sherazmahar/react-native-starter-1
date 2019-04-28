@@ -17,6 +17,7 @@
     "jsx-no-bind": false,
     "jsx-no-lambda": false,
     "no-shadowed-variable": false,
-    "no-any": true
+    "no-any": true,
+    "no-object-literal-type-assertion": false
   }
 }

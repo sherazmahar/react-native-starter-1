@@ -1,24 +1,25 @@
-import { all, put, takeEvery } from "redux-saga/effects"
+import { AnyAction } from "redux"
+import { all, call, put, takeEvery } from "redux-saga/effects"
 
+import api from "@apis"
+import { ApiResponse } from "@apis/types"
 import { User } from "@models"
-import { RoomType } from "@models/Room"
-import { setUser } from "@redux/user/actions"
-import { SagaUserActionTypes } from "@redux/user/types"
+import { setUserLoadState } from "@redux/LoadState/actions"
 
-const delay = (ms: number) => new Promise(res => setTimeout(res, ms))
+import { setUser } from "./actions"
+import { GetUserAction, SagaUserActionTypes } from "./types"
 
-function* getUser() {
-  yield delay(1000)
+function* getUser(action: GetUserAction) {
+  yield put(setUserLoadState({ isLoading: true }))
 
-  const user: User = {
-    name: "ScitBiz",
-    room: {
-      id: "403",
-      type: RoomType.VIP
-    }
+  const response: ApiResponse<User> = yield call(api.user.getInfo, action.payload)
+
+  if (response.data) {
+    yield put(setUser(response.data))
+    yield put(setUserLoadState({ isLoading: false }))
+  } else {
+    yield put(setUserLoadState({ isLoading: false, error: response.error }))
   }
-
-  yield put(setUser(user))
 }
 
 function* watchGetUser() {
