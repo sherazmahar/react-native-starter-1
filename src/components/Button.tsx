@@ -1,6 +1,12 @@
 import React from "react"
 import {
-    GestureResponderEvent, StyleProp, StyleSheet, Text, TextStyle, TouchableOpacity, ViewStyle
+  GestureResponderEvent,
+  StyleProp,
+  StyleSheet,
+  Text,
+  TextStyle,
+  TouchableOpacity,
+  ViewStyle
 } from "react-native"
 
 import { Colors, Spaces } from "@configs/styles"
@@ -9,7 +15,7 @@ interface Props {
   text: String
   style?: StyleProp<ViewStyle>
   textStyle?: StyleProp<TextStyle>
-  onPress?: (event: GestureResponderEvent) => void
+  onPress?: (event?: GestureResponderEvent) => void
 }
 
 export default class Button extends React.PureComponent<Props> {
@@ -28,7 +34,9 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: Colors.MAIN,
     padding: Spaces.PADDING,
-    borderRadius: Spaces.RADIUS
+    borderRadius: Spaces.RADIUS,
+    justifyContent: "center",
+    alignItems: "center"
   },
   text: {
     color: Colors.TEXT,

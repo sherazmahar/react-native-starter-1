@@ -8,12 +8,15 @@
     "@models": "${workspaceRoot}/src/models",
     "@navigators": "${workspaceRoot}/src/navigators",
     "@redux": "${workspaceRoot}/src/redux",
-    "@screens": "${workspaceRoot}/src/screens",
+    "@pages": "${workspaceRoot}/src/pages",
     "@utils": "${workspaceRoot}/src/utils"
   },
   "importSorter.generalConfiguration.sortOnBeforeSave": true,
   "importSorter.importStringConfiguration.hasSemicolon": false,
   "importSorter.importStringConfiguration.quoteMark": "double",
+  "importSorter.importStringConfiguration.maximumNumberOfImportExpressionsPerLine.type": "newLineEachExpressionAfterCountLimit",
+  "importSorter.importStringConfiguration.maximumNumberOfImportExpressionsPerLine.count": 120,
+  "importSorter.importStringConfiguration.tabSize": 2,
   "importSorter.sortConfiguration.customOrderingRules.rules": [
     {
       "type": "importMember",
