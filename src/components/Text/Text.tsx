@@ -1,23 +1,26 @@
 import React from "react"
-import { Text as RNText, TextStyle } from "react-native"
+import { StyleSheet, Text as RNText } from "react-native"
 
-import presets from "./presets"
+import { color } from "/configs"
+
+import styles from "./styles"
 import TextProps from "./types"
 
-export default function Text(props: TextProps) {
-  const { preset = "default", textProps = {}, children, text, style: styleOverride, ...rest } = props
-
-  // assemble the style
-  const style: TextStyle[] = [presets[preset] || presets.default]
-  if (Array.isArray(styleOverride)) {
-    style.push(...styleOverride)
-  } else {
-    style.push(styleOverride || {})
+export default class Text extends React.PureComponent<TextProps> {
+  public static defaultProps: TextProps = {
+    style: {},
+    color: color.text
   }
 
-  return (
-    <RNText {...rest} style={style}>
-      {children || text}
-    </RNText>
-  )
+  render() {
+    const { children, style: styleOverride, color, ...rest } = this.props
+
+    const style = StyleSheet.flatten([styles.text, { color }, styleOverride])
+
+    return (
+      <RNText {...rest} style={style}>
+        {children}
+      </RNText>
+    )
+  }
 }

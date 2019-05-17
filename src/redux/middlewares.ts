@@ -1,6 +1,6 @@
 import createSagaMiddleware from "redux-saga"
 
-import rootSaga from "@redux/sagas"
+import rootSaga from "/redux/sagas"
 
 function getDevMiddlewares() {
   if (process.env.NODE_ENV === `development`) {

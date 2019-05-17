@@ -1,30 +1,13 @@
-import { TextProperties, TextStyle } from "react-native"
+import { StyleProp, TextProps as RNTextProps, TextStyle } from "react-native"
 
-import { TextPresetType } from "./presets"
-
-export default interface TextProps extends TextProperties {
-  /**
-   * The text to display
-   */
-  children?: string | string[]
-
-  /**
-   * The text to display (if not using [TextProps.children])
-   */
-  text?: string
-
-  /**
-   * Text props (use with i18n-js format)
-   */
-  textProps?: object
-
+export default interface TextProps extends RNTextProps {
   /**
    * An optional style override
    */
-  style?: TextStyle | TextStyle[]
+  style: StyleProp<TextStyle>
 
   /**
-   * One of the different types of text presets.
+   * The color to apply
    */
-  preset?: TextPresetType
+  color: string
 }

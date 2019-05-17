@@ -1,22 +1,12 @@
 {
   "presets": ["module:metro-react-native-babel-preset"],
   "plugins": [
+    ["@babel/plugin-proposal-class-properties"],
     [
       "module-resolver",
       {
-        "root": ["./src"],
         "alias": {
-          "@apis": "./src/apis",
-          "@assets": "./src/assets",
-          "@components": "./src/components",
-          "@configs": "./src/configs",
-          "@languages": "./src/languages",
-          "@models": "./src/models",
-          "@modules": "./src/modules",
-          "@navigators": "./src/navigators",
-          "@redux": "./src/redux",
-          "@screens": "./src/screens",
-          "@utils": "./src/utils"
+          "^\\/(.+)": "./src/\\1"
         }
       }
     ]

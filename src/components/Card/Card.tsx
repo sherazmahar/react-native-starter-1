@@ -1,23 +1,10 @@
 import React from "react"
-import { View, ViewStyle } from "react-native"
+import { View } from "react-native"
 
-import { style as globalStyle } from "@configs"
+import styles from "./styles"
 
-import CardProps from "./types"
-
-export default function Card(props: CardProps) {
-  const { style: overrideStyle, children, ...rest } = props
-
-  const style: ViewStyle[] = [globalStyle.card]
-  if (Array.isArray(overrideStyle)) {
-    style.push(...overrideStyle)
-  } else {
-    style.push(overrideStyle || {})
+export default class Card extends React.PureComponent {
+  render() {
+    return <View style={styles.container}>{this.props.children}</View>
   }
-
-  return (
-    <View {...rest} style={style}>
-      {children}
-    </View>
-  )
 }

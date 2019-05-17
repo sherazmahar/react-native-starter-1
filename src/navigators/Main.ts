@@ -1,6 +1,6 @@
 import { createSwitchNavigator } from "react-navigation"
 
-import { Sample } from "@screens"
+import { Sample } from "/screens"
 
 export enum Routes {
   SAMPLE = "Sample"

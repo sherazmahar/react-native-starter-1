@@ -1,4 +1,4 @@
-import { RoomType } from "@models/Room"
+import { RoomType } from "/models/Room"
 
 const SampleData = {
   users: [

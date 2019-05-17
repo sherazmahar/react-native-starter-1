@@ -6,6 +6,6 @@ import i18n, { TranslateOptions } from "i18n-js"
  * @param key The i18n key
  * @param options Translate options
  */
-export function translate(key: string, options?: TranslateOptions) {
+export const translate = (key: string, options?: TranslateOptions) => {
   return key ? i18n.t(key, options) : key
 }

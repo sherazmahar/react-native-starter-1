@@ -1,3 +1,1 @@
-export function wait(ms: number) {
-  return new Promise(res => setTimeout(res, ms))
-}
+export const wait = (ms: number = 1000) => new Promise((res) => setTimeout(res, ms))

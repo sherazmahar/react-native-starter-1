@@ -1,37 +1,25 @@
-import { TextStyle, TouchableOpacityProps, ViewStyle } from "react-native"
+import { TouchableOpacityProps } from "react-native"
 
-import { TextPresetType } from "@components/Text/presets"
-
-import { ButtonPresetType } from "./presets"
+import { buttonTheme } from "./styles"
 
 export default interface ButtonProps extends TouchableOpacityProps {
   /**
    * The text to display
    */
-  text: string | string[]
+  text?: string
 
   /**
-   * Text props (use with i18n-js format)
+   * React children (usually <Text>)
    */
-  textProps?: object
+  children?: React.ReactElement
 
   /**
-   * An optional style override for text
+   * The color for the button
    */
-  textStyle?: TextStyle
+  color?: string
 
   /**
-   * An optional style override
+   * Button preset
    */
-  style?: ViewStyle | ViewStyle[]
-
-  /**
-   * One of the different types of button presets.
-   */
-  preset?: ButtonPresetType
-
-  /**
-   * One of the different types of text presets.
-   */
-  textPreset?: TextPresetType
+  preset: keyof typeof buttonTheme
 }

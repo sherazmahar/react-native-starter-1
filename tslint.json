@@ -1,7 +1,9 @@
 {
-  "extends": ["tslint-react-recommended"],
+  "extends": ["tslint:latest", "tslint-react", "tslint-config-prettier"],
+  "linterOptions": {
+    "exclude": ["node_modules/**/*.ts", "dist/**/*.ts"]
+  },
   "rules": {
-    "grouped-imports": [true],
     "quotemark": [true, "double", "jsx-double", "avoid-escape"],
     "semicolon": [true, "never"],
     "member-access": [false],
@@ -11,13 +13,43 @@
     "no-implicit-dependencies": false,
     "no-constant-condition": false,
     "triple-equals": [true, "allow-undefined-check"],
-    "ter-indent": [true, 2, { "SwitchCase": 1 }],
     "no-duplicate-imports": true,
-    "jsx-alignment": true,
-    "jsx-no-bind": false,
-    "jsx-no-lambda": false,
     "no-shadowed-variable": false,
     "no-any": true,
-    "no-object-literal-type-assertion": false
+    "no-object-literal-type-assertion": false,
+    "ordered-imports": true,
+    "array-type": [true, "generic"],
+    "class-name": true,
+    "curly": true,
+    "deprecation": true,
+    "indent": [true, "spaces", 2],
+    "interface-name": false,
+    "import-spacing": true,
+    "max-classes-per-file": [true, 1],
+    "max-file-line-count": [true, 400],
+    "newline-per-chained-call": true,
+    "no-construct": true,
+    "no-empty-interface": false,
+    "no-magic-numbers": true,
+    "no-parameter-reassignment": true,
+    "no-string-literal": true,
+    "no-unused-expression": true,
+    "no-use-before-declare": true,
+    "no-var-keyword": true,
+    "prefer-const": true,
+    "prefer-for-of": true,
+    "prefer-object-spread": true,
+    "prefer-switch": true,
+    "prefer-template": true,
+    "object-literal-sort-keys": false,
+    "arrow-return-shorthand": true,
+    "arrow-parens": true,
+
+    //tslint-react
+    "jsx-alignment": true,
+    "jsx-boolean-value": "never",
+    "jsx-key": true,
+    "jsx-space-before-trailing-slash": true,
+    "jsx-wrap-multiline": true
   }
 }

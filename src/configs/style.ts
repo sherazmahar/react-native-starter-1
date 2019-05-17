@@ -1,17 +1,20 @@
 import { StyleSheet } from "react-native"
 
-import { color, radius, spacing } from "@configs"
+import { color, radius } from "/configs"
 
 export default StyleSheet.create({
-  card: {
-    backgroundColor: color.white,
-    padding: spacing.m,
-    margin: spacing.m,
-    borderRadius: radius.m,
-    elevation: 2,
-    shadowColor: color.black,
+  shadow: {
+    elevation: 3,
     shadowOffset: { width: 0, height: 3 },
-    shadowOpacity: 0.1,
-    shadowRadius: radius.m
+    shadowRadius: radius.m,
+    shadowColor: color.black,
+    shadowOpacity: 0.1
+  },
+  expand: {
+    flex: 1
+  },
+  centerRow: {
+    flexDirection: "row",
+    alignItems: "center"
   }
 })

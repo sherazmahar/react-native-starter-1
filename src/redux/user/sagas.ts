@@ -1,29 +1,23 @@
-import { AnyAction } from "redux"
 import { all, call, put, takeEvery } from "redux-saga/effects"
 
-import api from "@apis"
-import { ApiResponse } from "@apis/types"
-import { User } from "@models"
-import { setUserLoadState } from "@redux/LoadState/actions"
+import * as api from "/apis"
+import { User } from "/models"
 
-import { setUser } from "./actions"
-import { GetUserAction, SagaUserActionTypes } from "./types"
+import { FETCH_USER_REQUEST } from "./action-types"
+import { fetchUser } from "./actions"
 
-function* getUser(action: GetUserAction) {
-  yield put(setUserLoadState({ isLoading: true }))
+function* getUser(action: ReturnType<typeof fetchUser.request>): Generator {
+  try {
+    const user: User = yield call(api.user.getInfo, action.payload)
 
-  const response: ApiResponse<User> = yield call(api.user.getInfo, action.payload)
-
-  if (response.data) {
-    yield put(setUser(response.data))
-    yield put(setUserLoadState({ isLoading: false }))
-  } else {
-    yield put(setUserLoadState({ isLoading: false, error: response.error }))
+    yield put(fetchUser.success(user))
+  } catch (error) {
+    yield put(fetchUser.failure(error))
   }
 }
 
 function* watchGetUser() {
-  yield takeEvery(SagaUserActionTypes.GET_USER, getUser)
+  yield takeEvery(FETCH_USER_REQUEST, getUser)
 }
 
 export default function* userSaga() {

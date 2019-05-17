@@ -8,7 +8,12 @@ i18n.fallbacks = true
 i18n.translations = languages
 
 const fallback = { languageTag: "en", isRTL: false }
-const { languageTag } = RNLocalize.findBestAvailableLanguage(Object.keys(i18n.translations)) || fallback
+const { languageTag } = RNLocalize.findBestAvailableLanguage(Object.keys(languages)) || fallback
+
 i18n.locale = languageTag
 
 export default i18n.translations[languageTag] as AppLanguage
+
+export function setLanguage(lang: keyof typeof languages) {
+  i18n.locale = lang
+}

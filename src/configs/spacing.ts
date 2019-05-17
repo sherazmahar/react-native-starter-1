@@ -1,11 +1,13 @@
-export default {
-  xxxs: 2,
-  xxs: 4,
-  xs: 8,
-  s: 12,
-  m: 16,
-  l: 24,
-  xl: 36,
-  xxl: 48,
-  xxxl: 56
+const spacing = {
+  xxs: 2,
+  xs: 4,
+  s: 8,
+  m: 12,
+  l: 16,
+  xl: 24,
+  xxl: 32
 }
+
+export type SpacingKey = keyof typeof spacing
+
+export default spacing

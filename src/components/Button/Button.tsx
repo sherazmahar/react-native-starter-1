@@ -1,27 +1,34 @@
 import React from "react"
-import { TouchableOpacity, ViewStyle } from "react-native"
+import { StyleSheet, TouchableOpacity } from "react-native"
 
-import { Text } from "@components"
+import { Text } from "/components"
 
-import presets, { ButtonTextPresets } from "./presets"
+import { buttonTextTheme, buttonTheme } from "./styles"
 import ButtonProps from "./types"
 
-export default function Button(props: ButtonProps) {
-  const { preset = "default", textProps = {}, style: styleOverride, text, textPreset, textStyle, ...rest } = props
-
-  // assemble the style
-  const style: ViewStyle[] = [presets[preset] || presets.default]
-  if (Array.isArray(styleOverride)) {
-    style.push(...styleOverride)
-  } else {
-    style.push(styleOverride || {})
+export default class Button extends React.PureComponent<ButtonProps> {
+  public static defaultProps: ButtonProps = {
+    activeOpacity: 0.6,
+    preset: "primary",
+    style: {}
   }
 
-  return (
-    <TouchableOpacity {...rest} style={style}>
-      <Text preset={textPreset} textProps={textProps} style={[ButtonTextPresets.default, textStyle || {}]}>
-        {text}
-      </Text>
-    </TouchableOpacity>
-  )
+  render() {
+    const { text, color, preset, style: styleOverride, children, ...rest } = this.props
+
+    const buttonPreset = buttonTheme[preset]
+    const textPreset = buttonTextTheme[preset]
+
+    const flattenedStyleOverride = Array.isArray(styleOverride)
+      ? StyleSheet.flatten(styleOverride)
+      : styleOverride
+
+    const style = [buttonPreset, flattenedStyleOverride]
+
+    return (
+      <TouchableOpacity {...rest} style={style}>
+        {text ? <Text style={textPreset}>{text}</Text> : children}
+      </TouchableOpacity>
+    )
+  }
 }

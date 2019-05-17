@@ -1,3 +1,3 @@
 export interface GetUserInfoParams {
-  id: string
+  id?: string
 }
