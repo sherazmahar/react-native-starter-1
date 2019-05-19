@@ -1,5 +1,9 @@
 module.exports = {
-  presets: ["module:metro-react-native-babel-preset", "module:react-native-dotenv"],
+  env: {
+    test: {
+      plugins: [["@babel/plugin-proposal-class-properties"]]
+    }
+  },
   plugins: [
     [
       "module-resolver",
@@ -10,9 +14,5 @@ module.exports = {
       }
     ]
   ],
-  env: {
-    test: {
-      plugins: [["@babel/plugin-proposal-class-properties"]]
-    }
-  }
+  presets: ["module:metro-react-native-babel-preset", "module:react-native-dotenv"]
 }

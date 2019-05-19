@@ -4,11 +4,11 @@
   "private": true,
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
-    "test": "BABEL_ENV=test jest --no-cache",
+    "test": "BABEL_ENV=test jest --no-cache --coverage",
     "reset-cache": "npm start -- --reset-cache",
     "lint": "tslint --project tsconfig.json",
     "lint:fix": "tslint --project tsconfig.json --fix",
-    "prettier": "prettier --write \"{,!(node_modules|dist|android|ios)/**/}*.{js,jsx,ts,tsx}\"",
+    "prettier": "prettier --write \"{,!(node_modules|dist|android|ios|build|builds)/**/}*.{js,jsx,ts,tsx}\"",
     "pre-commit": "npm run lint:fix && npm run prettier && npm run test"
   },
   "dependencies": {
