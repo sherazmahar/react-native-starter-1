@@ -12,7 +12,7 @@
       "orderLevel": 10
     },
     {
-      "regex": "^[~@/]",
+      "regex": "^[/]",
       "orderLevel": 30
     },
     {

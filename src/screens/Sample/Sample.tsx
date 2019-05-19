@@ -1,15 +1,22 @@
 import React from "react"
 import { View } from "react-native"
+import { compose } from "redux"
 
 import { Button, Input, Space } from "/components"
 import { UserInfo } from "/features"
 import { lang } from "/languages"
+import { SampleReduxProps, withRedux } from "/screens/Sample/redux"
 
 import styles from "./styles"
-import { SamplePageProps as Props, SamplePageState as State } from "./types"
 
-export default class Sample extends React.PureComponent<Props, State> {
-  state = {
+export interface Props extends SampleReduxProps {}
+
+export interface State {
+  id?: string
+}
+
+class Sample extends React.PureComponent<Props, State> {
+  state: State = {
     id: ""
   }
 
@@ -47,3 +54,5 @@ export default class Sample extends React.PureComponent<Props, State> {
     )
   }
 }
+
+export default compose(withRedux)(Sample)

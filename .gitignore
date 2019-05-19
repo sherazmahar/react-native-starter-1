@@ -56,3 +56,5 @@ buck-out/
 *.jsbundle
 
 dist
+.nyc_output
+coverage

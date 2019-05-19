@@ -17,8 +17,9 @@ const INITIAL_STATE: ReduxData<User> = {
   }
 }
 
-export default function(state = INITIAL_STATE, action: UserAction): typeof INITIAL_STATE {
+export default (state = INITIAL_STATE, action: UserAction): typeof INITIAL_STATE => {
   switch (action.type) {
+    // Saga actions
     case getType(fetchUser.request):
       return applyStateStatus(state, ReduxStateType.LOADING)
 
@@ -31,6 +32,7 @@ export default function(state = INITIAL_STATE, action: UserAction): typeof INITI
     case getType(fetchUser.cancel):
       return cancelledState(state)
 
+    // Redux actions
     case getType(setLoadState):
       return applyStateStatus(state, action.payload)
 

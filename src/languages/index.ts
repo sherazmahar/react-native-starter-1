@@ -1,1 +1,2 @@
-export { default as lang } from "./i18n"
+export * from "./i18n"
+export * from "./translate"

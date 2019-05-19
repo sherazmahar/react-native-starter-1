@@ -1,11 +1,12 @@
-import AppLanguage from "./type"
+import AppLanguage from "../types"
 
-const VietnameseLanguage: AppLanguage = {
+export const vi: AppLanguage = {
   common: {
     empty: "Trống"
   },
   error: {
-    userNotFound: "User không tồn tại"
+    userNotFound: "User không tồn tại",
+    unauthorized: "Không thể xác thực tài khoản"
   },
   sample: {
     title: "Sample Page",
@@ -16,5 +17,3 @@ const VietnameseLanguage: AppLanguage = {
     searchSomething: "Tìm kiếm..."
   }
 }
-
-export default VietnameseLanguage

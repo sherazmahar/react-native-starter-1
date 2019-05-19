@@ -15,7 +15,7 @@ import { GetUserInfoParams } from "./types"
  * @throws [USER_NOT_FOUND] if no user match
  * @throws other error
  */
-export async function getInfo(params: GetUserInfoParams): Promise<User> {
+export const getInfo = async (params: GetUserInfoParams): Promise<User> => {
   // Give a little delay to look like the real api request
   await wait()
 

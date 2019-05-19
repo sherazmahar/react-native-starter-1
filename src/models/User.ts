@@ -1,6 +1,6 @@
-import { Room } from "/models"
+import { Room } from "./Room"
 
-export default interface User {
+export interface User {
   id: string
   name: string
   room?: Room

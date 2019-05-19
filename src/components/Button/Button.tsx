@@ -1,7 +1,7 @@
 import React from "react"
 import { StyleSheet, TouchableOpacity } from "react-native"
 
-import { Text } from "/components"
+import { Text } from "/components/Text"
 
 import { buttonTextTheme, buttonTheme } from "./styles"
 import ButtonProps from "./types"

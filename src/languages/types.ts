@@ -4,6 +4,7 @@ export default interface AppLanguage {
   }
   error: {
     userNotFound: string
+    unauthorized: string
   }
   sample: {
     title: string

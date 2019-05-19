@@ -1,11 +1,12 @@
-import AppLanguage from "./type"
+import AppLanguage from "../types"
 
-const en: AppLanguage = {
+export const en: AppLanguage = {
   common: {
     empty: "Empty"
   },
   error: {
-    userNotFound: "User not found"
+    userNotFound: "User not found",
+    unauthorized: "Unauthorized"
   },
   sample: {
     title: "Sample Page",
@@ -16,5 +17,3 @@ const en: AppLanguage = {
     searchSomething: "Search something..."
   }
 }
-
-export default en

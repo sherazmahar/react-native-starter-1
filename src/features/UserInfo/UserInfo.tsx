@@ -1,5 +1,6 @@
 import React from "react"
 import { ActivityIndicator } from "react-native"
+import { compose } from "redux"
 import { get } from "ts-get"
 
 import { Card, Text } from "/components"
@@ -9,9 +10,13 @@ import { translate } from "/languages/translate"
 import { RoomType } from "/models/Room"
 import { ReduxStateType } from "/redux/types"
 
-import { UserInfoProps } from "./types"
+import { UserInfoReduxProps, withRedux } from "./redux"
 
-export default class UserInfo extends React.PureComponent<UserInfoProps> {
+export interface Props extends UserInfoReduxProps {}
+
+export interface State {}
+
+class UserInfo extends React.PureComponent<Props, State> {
   renderLoading() {
     return (
       <Card>
@@ -65,3 +70,5 @@ export default class UserInfo extends React.PureComponent<UserInfoProps> {
     }
   }
 }
+
+export default compose(withRedux)(UserInfo)

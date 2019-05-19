@@ -2,10 +2,14 @@ import createSagaMiddleware from "redux-saga"
 
 import rootSaga from "/redux/sagas"
 
-function getDevMiddlewares() {
+const getDevMiddlewares = () => {
   if (process.env.NODE_ENV === `development`) {
     const { createLogger } = require(`redux-logger`)
-    const logger = createLogger()
+    const logger = createLogger({
+      collapsed: true,
+      duration: true,
+      timestamp: true
+    })
 
     return [logger]
   }
@@ -24,6 +28,6 @@ export default middlewares
  *
  * This must be run after the applyMiddleware() function
  */
-export function setupMiddleware() {
+export const setupMiddleware = () => {
   sagaMiddleware.run(rootSaga)
 }

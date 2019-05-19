@@ -3,7 +3,7 @@ export enum RoomType {
   VIP = "VIP"
 }
 
-export default interface Room {
+export interface Room {
   id: string
   type: RoomType
 }

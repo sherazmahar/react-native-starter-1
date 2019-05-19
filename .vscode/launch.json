@@ -31,13 +31,14 @@
       "outDir": "${workspaceRoot}/.vscode/.react"
     },
     {
-      "name": "Debug in Exponent",
-      "program": "${workspaceRoot}/.vscode/launchReactNative.js",
-      "type": "reactnative",
+      "type": "node",
+      "name": "Test",
       "request": "launch",
-      "platform": "exponent",
-      "sourceMaps": true,
-      "outDir": "${workspaceRoot}/.vscode/.react"
+      "program": "${workspaceFolder}/node_modules/jest/bin/jest",
+      "args": ["--runInBand"],
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "internalConsoleOptions": "neverOpen"
     }
   ]
 }

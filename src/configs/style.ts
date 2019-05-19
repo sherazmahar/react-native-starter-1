@@ -1,6 +1,7 @@
 import { StyleSheet } from "react-native"
 
-import { color, radius } from "/configs"
+import color from "./color"
+import radius from "./radius"
 
 export default StyleSheet.create({
   shadow: {

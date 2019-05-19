@@ -1,7 +1,12 @@
 {
-  "extends": ["tslint:latest", "tslint-react", "tslint-config-prettier"],
+  "extends": [
+    "tslint:latest",
+    "tslint-react",
+    "tslint-config-prettier",
+    "tslint-no-circular-imports"
+  ],
   "linterOptions": {
-    "exclude": ["node_modules/**/*.ts", "dist/**/*.ts"]
+    "exclude": ["node_modules", "dist"]
   },
   "rules": {
     "quotemark": [true, "double", "jsx-double", "avoid-escape"],
@@ -20,14 +25,13 @@
     "ordered-imports": true,
     "array-type": [true, "generic"],
     "class-name": true,
-    "curly": true,
+    "curly": false,
     "deprecation": true,
     "indent": [true, "spaces", 2],
     "interface-name": false,
     "import-spacing": true,
     "max-classes-per-file": [true, 1],
     "max-file-line-count": [true, 400],
-    "newline-per-chained-call": true,
     "no-construct": true,
     "no-empty-interface": false,
     "no-magic-numbers": true,
@@ -44,6 +48,7 @@
     "object-literal-sort-keys": false,
     "arrow-return-shorthand": true,
     "arrow-parens": true,
+    "only-arrow-functions": true,
 
     //tslint-react
     "jsx-alignment": true,

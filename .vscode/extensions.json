@@ -5,12 +5,14 @@
   // List of extensions which should be recommended for users of this workspace.
   "recommendations": [
     "christian-kohler.path-intellisense",
-    "dbaeumer.vscode-eslint",
     "wayou.vscode-todo-highlight",
     "aaron-bond.better-comments",
     "esbenp.prettier-vscode",
     "ms-vscode.vscode-typescript-tslint-plugin",
-    "mike-co.import-sorter"
+    "mike-co.import-sorter",
+    "orta.vscode-jest",
+    "mikestead.dotenv",
+    "msjsdiag.vscode-react-native"
   ],
   // List of extensions recommended by VS Code that should not be recommended for users of this workspace.
   "unwantedRecommendations": []
