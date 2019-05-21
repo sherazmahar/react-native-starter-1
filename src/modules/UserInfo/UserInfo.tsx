@@ -11,6 +11,7 @@ import { translate } from "/languages/translate"
 import { User } from "/models"
 import { RoomType } from "/models/Room"
 import { ReduxStateType } from "/redux/types"
+import SampleData from "/utils/SampleData"
 
 import { UserInfoReduxProps, withRedux } from "./redux"
 import styles from "./styles"
@@ -47,10 +48,12 @@ class UserInfo extends React.Component<Props, State> {
 
   renderError(e?: Error) {
     const errorMessage = get(e, (error) => error.message, "")
+    const hintNames = SampleData.users.map((user) => user.id)
 
     return (
       <Card>
         <Text color={color.red}>{translate(errorMessage)}</Text>
+        <Text>{lang.sample.searchHint(hintNames.join(", "))}</Text>
       </Card>
     )
   }

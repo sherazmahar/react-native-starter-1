@@ -14,6 +14,7 @@ export const en: AppLanguage = {
     roomNumber: (roomNumber) => `Room number: ${roomNumber}`,
     roomType: (type) => `Room type: ${type}`,
     getUserInfo: "Get user information",
-    searchSomething: "Search something..."
+    searchSomething: "Search something...",
+    searchHint: (text: string) => `Hint: try with: ${text}`
   }
 }

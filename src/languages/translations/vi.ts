@@ -14,6 +14,7 @@ export const vi: AppLanguage = {
     roomNumber: (roomNumber) => `Số phòng: ${roomNumber}`,
     roomType: (type) => `Loại phòng: ${type}`,
     getUserInfo: "Lấy thông tin người dùng",
-    searchSomething: "Tìm kiếm..."
+    searchSomething: "Tìm kiếm...",
+    searchHint: (text: string) => `Gợi ý: hãy thử với: ${text}`
   }
 }

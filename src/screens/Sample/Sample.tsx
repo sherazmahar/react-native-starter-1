@@ -44,7 +44,7 @@ class Sample extends React.PureComponent<Props, State> {
         <UserInfo />
         <Space height="m" />
         <Input
-          placeholder="Insert any user id (ex: scitbiz)"
+          placeholder={lang.sample.searchSomething}
           autoCapitalize="none"
           onChangeText={this.onChangeId}
         />

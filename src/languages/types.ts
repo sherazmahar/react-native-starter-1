@@ -13,5 +13,6 @@ export default interface AppLanguage {
     roomType: (type: string) => string
     getUserInfo: string
     searchSomething: string
+    searchHint: (text: string) => string
   }
 }
