@@ -3,10 +3,10 @@ import { View } from "react-native"
 import { compose } from "redux"
 
 import { Button, Input, Space } from "/components"
-import { UserInfo } from "/features"
 import { lang } from "/languages"
-import { SampleReduxProps, withRedux } from "/screens/Sample/redux"
+import { UserInfo } from "/modules"
 
+import { SampleReduxProps, withRedux } from "./redux"
 import styles from "./styles"
 
 export interface Props extends SampleReduxProps {}

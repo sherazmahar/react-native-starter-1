@@ -1,6 +1,11 @@
 import { AppState } from "/redux/reducers"
 import { AppReducerType } from "/redux/types"
 
-export const userSelector = (state: AppState) => state[AppReducerType.USER].data
+const selector = (state: AppState) => state[AppReducerType.USER]
 
-export const userStateSelector = (state: AppState) => state[AppReducerType.USER].state
+export const userSelector = (state: AppState) => selector(state).data
+
+export const userStateSelector = (state: AppState) => ({
+  status: selector(state).status,
+  error: selector(state).error
+})

@@ -7,10 +7,14 @@
     "jsx": "react",
     "lib": ["es6"],
     "moduleResolution": "node",
+    "resolveJsonModule": true,
     "noEmit": true,
     "strict": true,
     "target": "esnext",
     "baseUrl": ".",
+    "importHelpers": false,
+    "noImplicitAny": true,
+    "noImplicitReturns": false,
     "paths": {
       "/*": ["./src/*"]
     }

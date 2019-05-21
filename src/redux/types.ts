@@ -10,12 +10,8 @@ export enum ReduxStateType {
   CANCELLED = "cancelled"
 }
 
-export interface ReduxState {
-  status: ReduxStateType
-  error?: Error
-}
-
 export interface ReduxData<T> {
   data: T
-  state: ReduxState
+  status: ReduxStateType
+  error?: Error
 }

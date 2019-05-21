@@ -11,7 +11,14 @@ export default class Input extends React.PureComponent<Props, State> {
     isFocused: false
   }
 
-  onFocus = (e: InputEvent) => {
+  constructor(props: Props) {
+    super(props)
+
+    this.onFocus = this.onFocus.bind(this)
+    this.onBlur = this.onBlur.bind(this)
+  }
+
+  onFocus(e: InputEvent) {
     const { onFocus } = this.props
 
     this.setState({ isFocused: true })
@@ -21,7 +28,7 @@ export default class Input extends React.PureComponent<Props, State> {
     }
   }
 
-  onBlur = (e: InputEvent) => {
+  onBlur(e: InputEvent) {
     const { onBlur } = this.props
 
     this.setState({ isFocused: false })

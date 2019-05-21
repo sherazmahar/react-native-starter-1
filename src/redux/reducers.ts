@@ -1,10 +1,10 @@
 import { combineReducers } from "redux"
 
 import { AppReducerType } from "./types"
-import userReducer from "./user/reducer"
+import { UserReducer } from "./user"
 
 const reducers = combineReducers({
-  [AppReducerType.USER]: userReducer
+  [AppReducerType.USER]: UserReducer
 })
 
 export default reducers

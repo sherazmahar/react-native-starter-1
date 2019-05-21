@@ -1,22 +1,25 @@
 import React from "react"
-import { ActivityIndicator } from "react-native"
+import { ActivityIndicator, Image } from "react-native"
 import { compose } from "redux"
 import { get } from "ts-get"
 
+import { ICON_VIP } from "/assets/images"
 import { Card, Text } from "/components"
 import { color } from "/configs"
 import { lang } from "/languages"
 import { translate } from "/languages/translate"
+import { User } from "/models"
 import { RoomType } from "/models/Room"
 import { ReduxStateType } from "/redux/types"
 
 import { UserInfoReduxProps, withRedux } from "./redux"
+import styles from "./styles"
 
 export interface Props extends UserInfoReduxProps {}
 
 export interface State {}
 
-class UserInfo extends React.PureComponent<Props, State> {
+class UserInfo extends React.Component<Props, State> {
   renderLoading() {
     return (
       <Card>
@@ -25,25 +28,25 @@ class UserInfo extends React.PureComponent<Props, State> {
     )
   }
 
-  renderLoaded() {
-    const { user } = this.props
-
+  renderLoaded(user: User) {
     const roomNumber = get(user.room, (room) => room.id, "")
     const roomType = get(user.room, (room) => room.type, RoomType.NORMAL)
 
+    const VIPIcon = roomType === RoomType.VIP && (
+      <Image resizeMode="contain" style={styles.vipIcon} source={ICON_VIP} />
+    )
+
     return (
       <Card>
-        <Text>{lang.sample.name(user.name)}</Text>
+        <Text typography="bold">{lang.sample.name(user.name)}</Text>
         <Text>{lang.sample.roomNumber(roomNumber)}</Text>
-        <Text>{lang.sample.roomType(roomType)}</Text>
+        <Text trailing={VIPIcon}>{lang.sample.roomType(roomType)}</Text>
       </Card>
     )
   }
 
-  renderError() {
-    const { loadState } = this.props
-
-    const errorMessage = get(loadState.error, (error) => error.message, "")
+  renderError(e?: Error) {
+    const errorMessage = get(e, (error) => error.message, "")
 
     return (
       <Card>
@@ -53,17 +56,17 @@ class UserInfo extends React.PureComponent<Props, State> {
   }
 
   render() {
-    const { loadState } = this.props
+    const { loadState, user } = this.props
 
     switch (loadState.status) {
       case ReduxStateType.LOADING:
         return this.renderLoading()
 
       case ReduxStateType.LOADED:
-        return this.renderLoaded()
+        return this.renderLoaded(user)
 
       case ReduxStateType.ERROR:
-        return this.renderError()
+        return this.renderError(loadState.error)
 
       default:
         return null

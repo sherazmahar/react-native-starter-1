@@ -1,17 +1,12 @@
-import AsyncStorage from "@react-native-community/async-storage"
 import { applyMiddleware, createStore } from "redux"
-import { PersistConfig, persistReducer, persistStore } from "redux-persist"
+import { persistReducer, persistStore } from "redux-persist"
+
+import { persistOptions } from "/redux/options"
 
 import middlewares, { setupMiddleware } from "./middlewares"
 import reducers from "./reducers"
 
-const persistConfig: PersistConfig = {
-  key: "root",
-  storage: AsyncStorage,
-  whitelist: []
-}
-
-const persistedReducer = persistReducer(persistConfig, reducers)
+const persistedReducer = persistReducer(persistOptions, reducers)
 
 const store = createStore(persistedReducer, applyMiddleware(...middlewares))
 const persistor = persistStore(store)

@@ -15,6 +15,7 @@
     "@react-native-community/async-storage": "^1.4.0",
     "axios": "^0.18.0",
     "i18n-js": "^3.2.2",
+    "immer-reducer": "^0.7.0",
     "react": "16.8.3",
     "react-native": "0.59.8",
     "react-native-gesture-handler": "^1.2.1",
@@ -25,8 +26,7 @@
     "redux": "^4.0.1",
     "redux-persist": "^5.10.0",
     "redux-saga": "^1.0.2",
-    "ts-get": "^1.0.5",
-    "typesafe-actions": "^4.3.0"
+    "ts-get": "^1.0.5"
   },
   "devDependencies": {
     "@babel/core": "^7.4.4",
@@ -44,6 +44,7 @@
     "@types/react-redux": "^7.0.8",
     "@types/react-test-renderer": "^16.8.1",
     "@types/redux-logger": "^3.0.7",
+    "@types/webpack-env": "^1.13.9",
     "babel-jest": "^24.8.0",
     "babel-plugin-module-resolver": "^3.2.0",
     "chai": "^4.2.0",
@@ -71,5 +72,10 @@
     "hooks": {
       "pre-commit": "npm run pre-commit"
     }
+  },
+  "rnpm": {
+    "assets": [
+      "./src/assets/fonts/*.ttf"
+    ]
   }
 }
