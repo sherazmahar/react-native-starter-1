@@ -17,7 +17,7 @@
     "i18n-js": "^3.2.2",
     "immer-reducer": "^0.7.0",
     "react": "16.8.6",
-    "react-native": "0.59.8",
+    "react-native": "0.60.4",
     "react-native-gesture-handler": "^1.2.1",
     "react-native-localize": "^1.1.2",
     "react-native-vector-icons": "^6.4.2",
